@@ -1,4 +1,4 @@
-const Product = require('../models/productModel');
+const Product = require('./../../models/productModel');
 
 // Create a new product
 exports.createProduct = (req, res) => {
@@ -40,8 +40,9 @@ exports.updateProduct = (req, res) => {
 
 // Delete a product by ID
 exports.deleteProduct = (req, res) => {
-  Product.findByIdAndDelete(req.params.id, (err) => {
-    if (err) return res.status(400).json({ success: false, error: err });
-    return res.status(200).json({ success: true, data: {} });
-  });
+  console.log(req.params.id);
+  // Product.findByIdAndDelete(req.params.id, (err) => {
+  //   if (err) return res.status(400).json({ success: false, error: err });
+  //   return res.status(200).json({ success: true, data: {} });
+  // });
 };
